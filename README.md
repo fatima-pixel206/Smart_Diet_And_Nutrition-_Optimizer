@@ -27,7 +27,7 @@ src/main/resources/
 # ⚙️ How to Run
 
 Clone the repository: ```bash
-git clone [repository link]
+git clone [https://github.com/fatima-pixel206/Smart_Diet_And_Nutrition-_Optimizer.git]
 Open in IDE: Load the project in IntelliJ IDEA.
 Build Project: Allow Maven to download all necessary dependencies.
 Run Application: Execute SmartDietApplication.java
