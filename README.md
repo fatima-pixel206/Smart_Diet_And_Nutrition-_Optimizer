@@ -8,11 +8,11 @@ Smart Filtering: Utilizes Java Collections and DSA algorithms for high-speed sea
 Interactive UI: A modern HTML5/CSS3 interface seamlessly connected via Spring Boot and Thymeleaf.
 Mathematical Precision: Implements Linear Programming (Simplex Logic) to ensure mathematically optimized results.
 # 🛠️ Tech Stack
-# Backend: Java 17+, Spring Boot
-## Frontend: HTML5, CSS3, Thymeleaf
-# Logic/DSA: Linear Programming (2D Arrays), ArrayLists, Objects & Encapsulation
-# Build Tool: Maven
-# IDE: IntelliJ IDEA
+ Backend: Java 17+, Spring Boot
+ Frontend: HTML5, CSS3, Thymeleaf
+ Logic/DSA: Linear Programming (2D Arrays), ArrayLists, Objects & Encapsulation
+ Build Tool: Maven
+ IDE: IntelliJ IDEA
 # 📂 Project Structure
 
 src/main/java/org/example/smartdiet/
