@@ -138,6 +138,7 @@ public class NodeAndLinkedL {
             {
                 tem.price= price;
             }
+
         }
     }
 
