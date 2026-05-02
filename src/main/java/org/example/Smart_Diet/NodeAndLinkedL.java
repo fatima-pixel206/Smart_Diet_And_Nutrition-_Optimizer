@@ -16,15 +16,19 @@ public class NodeAndLinkedL {
         // add from head
 
         void addATHead(String foodName,String category,double crabs, int price, double fats, double calories, double proteins){
-                Node tempHead = new Node( foodName, category, crabs,  price,  fats,  calories,  proteins);
-                if(head == null){
+            if (duplicate(foodName)) {
+                System.out.println(" already in list ");
+                return;
+            }
+            Node tempHead = new Node( foodName, category, crabs,  price,  fats,  calories,  proteins);
+             if(head == null){
                         head = tempHead;
                         tail = tempHead;
+                        size++;
+                        return;
                 }
-                else {
                         tempHead.next= head;
                         head = tempHead;
-                }
                 size++;
         }
         // add from tail as usual
@@ -32,6 +36,11 @@ public class NodeAndLinkedL {
                 if( head == null){
                         addATHead(foodName, category, crabs,  price,  fats,  calories,  proteins);
                         return;
+                }
+               else if(duplicate(foodName)){
+                    System.out.println(" already in list  ");
+                    System.out.println(" cannot enter same item......");
+                    return;
                 }
                 else {
                         Node tempTail = new Node(foodName, category, crabs,  price,  fats,  calories,  proteins);
@@ -208,23 +217,40 @@ public class NodeAndLinkedL {
 
     }
     //
-    // lowest budget
-    boolean lowBudget(String item){
+    // lowest is duplicate
+    boolean duplicate(String item){
             boolean isfound = false;
             if(head == null)
                 return isfound;
-
             Node loop  = head;
             while(loop != null){
                 if(loop.foodName.equalsIgnoreCase(item)){
-                    System.out.println(" already in ");
                  isfound = true;
                  return isfound;
                 }
                 loop = loop.next;
             }
-
      return isfound;
+
+    }
+    // search by name
+    void searchByName(String name){
+            if(head == null){
+                return;
+            }
+            Node c = head;
+            boolean isfound = false;
+            while(c != null) {
+                if(c.foodName.equalsIgnoreCase(name)) {
+                    System.out.println(c.foodName + "      " + c.category + "       " + c.price + "       " + c.calories + "        " + c.fats + "     " + c.crabs + "      " + c.proteins);
+                    isfound = true;
+                    break;
+
+                }
+                c= c.next;
+        }
+        if(!isfound)
+            System.out.println(name+"is not found ");
     }
 
 
