@@ -1,6 +1,6 @@
 package org.example.Smart_Diet;
 
-import java.sql.SQLOutput;
+
 
 public class NodeAndLinkedL {
         private int size;
@@ -48,6 +48,7 @@ public class NodeAndLinkedL {
                 return;
             }
                 Node loop = head;
+            System.out.println(" ALL FOOD ITEMS");
                 System.out.println("Name    "+ "    Type "+ "     Price "+"     Calories "+"  fats "+"  crabs "+"  proteins ");
                 while(loop != null){
                         System.out.println(loop.foodName+"      "+loop.category+"       "+loop.price+"       "+loop.calories+"        "+loop.fats+"     "+loop.crabs+"      "+loop.proteins);
@@ -208,8 +209,22 @@ public class NodeAndLinkedL {
     }
     //
     // lowest budget
-    void lowBudget(){
+    boolean lowBudget(String item){
+            boolean isfound = false;
+            if(head == null)
+                return isfound;
 
+            Node loop  = head;
+            while(loop != null){
+                if(loop.foodName.equalsIgnoreCase(item)){
+                    System.out.println(" already in ");
+                 isfound = true;
+                 return isfound;
+                }
+                loop = loop.next;
+            }
+
+     return isfound;
     }
 
 
