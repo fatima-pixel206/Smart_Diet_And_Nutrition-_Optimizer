@@ -165,20 +165,52 @@ public class NodeAndLinkedL {
             // for iterations
             Node tempo = head;
             // maxmim protien
-            Node highProteins = head;
+            Node high = null, higher = null, highest = null;
+
             while( tempo != null){
-                if(tempo.proteins > highProteins.proteins){
-                    highProteins = tempo;
+                // check for highest proteins
+                //if highest found high protein will be higher , higher p = last highest
+                // and highest = new update
+                if( highest == null || tempo.proteins > highest.proteins){
+                 high = higher;
+                 higher= highest;
+                    highest = tempo;
+                }
+                // if protein is less then highest but > then higher
+                else if(tempo != highest &&( higher == null || tempo.proteins > higher.proteins)){
+                 high = higher;
+                 higher = tempo;
+                }
+                // third case
+                else if (tempo != higher &&(high == null || tempo.proteins > high.proteins)) {
+                 high = tempo;
+
                 }
                 tempo = tempo.next;
             }
             // suggest
-        System.out.println("SMART SUGGESSTION");
-        System.out.println("HIGHEST PROTEIN ");
-        System.out.println("Name    "+ "    Type "+ "     Price "+"     Calories "+"  fats "+"  crabs "+"  proteins ");
+        System.out.println("SMART SUGGESTION");
+        System.out.println(" TOP 3 HIGHEST PROTEIN FOODS ");
+        if(highest != null) {
+            System.out.println("Name    " + "    Type " + "     Price " + "     Calories " + "  fats " + "  crabs " + "  proteins ");
+            System.out.println(highest.foodName + "      " + highest.category + "       " + highest.price + "       " + high.calories + "        " + highest.fats + "     " + highest.crabs + "      " + highest.proteins);
+        }
+        if(higher != null){
+            System.out.println(higher.foodName + "      " + higher.category + "       " + higher.price + "       " + higher.calories + "        " + higher.fats + "     " + higher.crabs + "      " + higher.proteins);
 
-        System.out.println(highProteins.foodName + "      " + highProteins.category + "       " + highProteins.price + "       " + highProteins.calories + "        " + highProteins.fats + "     " + highProteins.crabs + "      " + highProteins.proteins);
+        }
+        if(high != null){
+            System.out.println(high.foodName + "      " + high.category + "       " + high.price + "       " + high.calories + "        " + high.fats + "     " +high.crabs + "      " + high.proteins);
+
+
+        }
 
     }
+    //
+    // lowest budget
+    void lowBudget(){
+
+    }
+
 
 }
