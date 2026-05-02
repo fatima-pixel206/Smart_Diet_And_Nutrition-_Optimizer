@@ -1,7 +1,7 @@
 package org.example.Smart_Diet;
 
 import java.util.Scanner;
-
+///
 public class MenuClass {
     public static void main(String[] args) {
         // objex
