@@ -1,5 +1,7 @@
 package org.example.Smart_Diet;
 
+import java.sql.SQLOutput;
+
 public class NodeAndLinkedL {
         private int size;
         private Node head;
@@ -40,6 +42,11 @@ public class NodeAndLinkedL {
         }
         // display all
         void displayAll(){
+            if(head == null) {
+                System.out.println(" There is no item in list>.......");
+
+                return;
+            }
                 Node loop = head;
                 System.out.println("Name    "+ "    Type "+ "     Price "+"     Calories "+"  fats "+"  crabs "+"  proteins ");
                 while(loop != null){
@@ -62,11 +69,11 @@ public class NodeAndLinkedL {
         // delete from tail
 
        void deleteAtTail(){
-                if(head== null) {
+                if(head == null) {
                         System.out.println(" list is null");
                         return;
                 }
-                if(tail == head){
+                if(head.next == null){
                     tail = null;
                     head = null;
                     size--;
@@ -74,37 +81,40 @@ public class NodeAndLinkedL {
                 }
 
                         Node temp ;
-                        for (temp= head; temp!=null ; temp=temp.next) {
+                        for (temp= head; temp.next.next!=null ; temp=temp.next) {
 
 
                         }
                         temp.next = null;
-                        tail =temp;
+                        tail = temp;
                         size--;
 
        }
        // filter
         // view by category
         void displayFilter(String userCategory){
+            if(head == null){
+                System.out.println(" list is empty ...");
+                return;
+            }
             boolean found  = false;
-                if(head==null)
-                        return;
+
 
                 System.out.println("All "+userCategory);
                 Node temp = head;
 
-                while(temp !=  null){
-                     if(temp.category.equalsIgnoreCase(userCategory)){
-                             System.out.println(temp.foodName+"      "+temp.category+"       "+temp.price+"       "+temp.calories+"        "+temp.fats+"     "+temp.crabs+"      "+temp.proteins);
-                found = true;
-                     }
-
-                        temp=temp.next;
+                while(temp !=  null) {
+                    if (temp.category.equalsIgnoreCase(userCategory)) {
+                        System.out.println(temp.foodName + "      " + temp.category + "       " + temp.price + "       " + temp.calories + "        " + temp.fats + "     " + temp.crabs + "      " + temp.proteins);
+                        found = true;
+                    }
+                    temp = temp.next;
+                }
                      if(!found){
                          System.out.println(userCategory+" is  not found");
                      }
 
-                }
+
         }
         // search by budget
         void searachByBudget(int budget){
@@ -124,14 +134,19 @@ public class NodeAndLinkedL {
         }
         // clean list
         void cleanList(){
+
              head = null;
              tail = null;
              size = 0;
 
-
         }
         // update price
     void update(int price,String name){
+
+            if(head == null){
+                System.out.println(" there is not exist any item in list ");
+                return;
+            }
 
         for (Node tem = head; tem !=null  ; tem=tem.next) {
             if(tem.foodName.equalsIgnoreCase(name) )
@@ -141,6 +156,29 @@ public class NodeAndLinkedL {
 
         }
     }
-// merged
+    // smart suggestions
+    void smartSuggest(){
+            if(head == null){
+                System.out.println(" list is empty .....");
+                return;
+            }
+            // for iterations
+            Node tempo = head;
+            // maxmim protien
+            Node highProteins = head;
+            while( tempo != null){
+                if(tempo.proteins > highProteins.proteins){
+                    highProteins = tempo;
+                }
+                tempo = tempo.next;
+            }
+            // suggest
+        System.out.println("SMART SUGGESSTION");
+        System.out.println("HIGHEST PROTEIN ");
+        System.out.println("Name    "+ "    Type "+ "     Price "+"     Calories "+"  fats "+"  crabs "+"  proteins ");
+
+        System.out.println(highProteins.foodName + "      " + highProteins.category + "       " + highProteins.price + "       " + highProteins.calories + "        " + highProteins.fats + "     " + highProteins.crabs + "      " + highProteins.proteins);
+
+    }
 
 }
