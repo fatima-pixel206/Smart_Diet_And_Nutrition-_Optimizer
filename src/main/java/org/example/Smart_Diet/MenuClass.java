@@ -59,7 +59,7 @@ public class MenuClass {
         menu.addAtTail("Raisins", "dry fruits", 79.0, 800, 0.5, 299.0, 3.1);
         menu.addAtTail("Dried Apricots", "dry fruits", 63.0, 1000, 0.5, 241.0, 3.4);
         // --- Data Adding End ---
-        menu.suggestCheaper();
+//menu.suggestCheaper();
         int choice;
 
         do {
