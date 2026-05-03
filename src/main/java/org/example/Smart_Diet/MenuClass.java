@@ -59,7 +59,7 @@ public class MenuClass {
         menu.addAtTail("Raisins", "dry fruits", 79.0, 800, 0.5, 299.0, 3.1);
         menu.addAtTail("Dried Apricots", "dry fruits", 63.0, 1000, 0.5, 241.0, 3.4);
         // --- Data Adding End ---
-            menu.searachByBudget(1000);
+        menu.suggestCheaper();
         int choice;
 
         do {
@@ -68,9 +68,11 @@ public class MenuClass {
 
             System.out.println(" Enter 2. Search by category (veg, fruit, meats,dairy,and dry fruits.)");
             System.out.println(" Enter 3. Check complete details of any food (name search)");
-            System.out.println(" Enter  4. for your budget: ");
+            System.out.println(" Enter 4. for your budget: ");
             System.out.println(" Enter 5. for get smart suggestions");
-            System.out.println(" Enter 6. for Exit");
+            System.out.println(" Enter 6. for top 5 lower price items");
+            System.out.println(" Enter 7. for Exit");
+
             System.out.print("   State your choice (1-6): ");
 
             choice = sc.nextInt();
@@ -100,12 +102,15 @@ public class MenuClass {
                     menu.smartSuggest();
                     break;
                 case 6:
+                    menu.suggestCheaper();
+                    break;
+                case 7:
                     System.out.println("The program is closing... Allah Hafiz!");
                     break;
                 default:
                     System.out.println("Wrong choice! Try again.");
             }
-        } while (choice != 6);
+        } while (choice != 7);
 
         sc.close();
     }
