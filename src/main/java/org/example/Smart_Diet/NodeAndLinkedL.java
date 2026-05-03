@@ -58,9 +58,13 @@ public class NodeAndLinkedL {
             }
                 Node loop = head;
             System.out.println(" ALL FOOD ITEMS");
-                System.out.println("Name    "+ "    Type "+ "     Price "+"     Calories "+"  fats "+"  crabs "+"  proteins ");
+            System.out.printf("%-15s %-12s %-8s %-10s %-8s %-8s %-8s\n",
+                    "Name", "Type", "Price", "Calories", "Fats", "Carbs", "Proteins");
+// Niche aik line draw kar dete hain formatting ke liye
+            System.out.println("----------------------------------------------------------------------------------");
                 while(loop != null){
-                        System.out.println(loop.foodName+"      "+loop.category+"       "+loop.price+"       "+loop.calories+"        "+loop.fats+"     "+loop.crabs+"      "+loop.proteins);
+                    System.out.printf("%-15s %-12s %-8d %-10.1f %-8.1f %-8.1f %-8.1f\n",
+                            loop.foodName, loop.category, loop.price, loop.calories, loop.fats, loop.crabs, loop.proteins);
                         loop=loop.next;
                 }
         }
@@ -115,7 +119,8 @@ public class NodeAndLinkedL {
 
                 while(temp !=  null) {
                     if (temp.category.equalsIgnoreCase(userCategory)) {
-                        System.out.println(temp.foodName + "      " + temp.category + "       " + temp.price + "       " + temp.calories + "        " + temp.fats + "     " + temp.crabs + "      " + temp.proteins);
+                        System.out.printf("%-15s %-12s %-8d %-10.1f %-8.1f %-8.1f %-8.1f\n",
+                                temp.foodName, temp.category, temp.price, temp.calories, temp.fats, temp.crabs, temp.proteins);
                         found = true;
                     }
                     temp = temp.next;
@@ -201,17 +206,21 @@ public class NodeAndLinkedL {
             // suggest
         System.out.println("SMART SUGGESTION");
         System.out.println(" TOP 3 HIGHEST PROTEIN FOODS ");
+        System.out.printf("%-15s %-12s %-8s %-10s %-8s %-8s %-8s\n",
+                "Name", "Type", "Price", "Calories", "Fats", "Carbs", "Proteins");
+// Niche aik line draw kar dete hain formatting ke liye
         if(highest != null) {
-            System.out.println("Name    " + "    Type " + "     Price " + "     Calories " + "  fats " + "  crabs " + "  proteins ");
-            System.out.println(highest.foodName + "      " + highest.category + "       " + highest.price + "       " + high.calories + "        " + highest.fats + "     " + highest.crabs + "      " + highest.proteins);
+
+            System.out.printf("%-15s %-12s %-8d %-10.1f %-8.1f %-8.1f %-8.1f\n",
+                    highest.foodName, highest.category, highest.price, highest.calories, highest.fats, highest.crabs, highest.proteins);
         }
         if(higher != null){
-            System.out.println(higher.foodName + "      " + higher.category + "       " + higher.price + "       " + higher.calories + "        " + higher.fats + "     " + higher.crabs + "      " + higher.proteins);
-
+            System.out.printf("%-15s %-12s %-8d %-10.1f %-8.1f %-8.1f %-8.1f\n",
+                    higher.foodName, higher.category, higher.price, higher.calories, higher.fats, higher.crabs, higher.proteins);
         }
         if(high != null){
-            System.out.println(high.foodName + "      " + high.category + "       " + high.price + "       " + high.calories + "        " + high.fats + "     " +high.crabs + "      " + high.proteins);
-
+            System.out.printf("%-15s %-12s %-8d %-10.1f %-8.1f %-8.1f %-8.1f\n",
+                    high.foodName, high.category, high.price, high.calories, high.fats, high.crabs, high.proteins);
 
         }
 
