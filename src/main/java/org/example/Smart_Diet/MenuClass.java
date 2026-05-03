@@ -59,14 +59,14 @@ public class MenuClass {
         menu.addAtTail("Raisins", "dry fruits", 79.0, 800, 0.5, 299.0, 3.1);
         menu.addAtTail("Dried Apricots", "dry fruits", 63.0, 1000, 0.5, 241.0, 3.4);
         // --- Data Adding End ---
-
+            menu.searachByBudget(1000);
         int choice;
 
         do {
             System.out.println("\n========= SMART DIET MENU =========");
             System.out.println(" Enter 1. for View all food items");
 
-            System.out.println(" Enter 2. Search by category (veg, fruits, Meats,Dairy,and Dry_fruits.)");
+            System.out.println(" Enter 2. Search by category (veg, fruit, meats,dairy,and dry fruits.)");
             System.out.println(" Enter 3. Check complete details of any food (name search)");
             System.out.println(" Enter  4. for your budget: ");
             System.out.println(" Enter 5. for get smart suggestions");

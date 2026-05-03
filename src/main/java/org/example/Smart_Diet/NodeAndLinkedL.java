@@ -135,16 +135,19 @@ public class NodeAndLinkedL {
         void searachByBudget(int budget){
                 if(head== null) return;
                 Node temp = head;
-                if(temp.price != budget){
-                        System.out.println(" this budget is not exist in list ");
-                        return;
-                }
+                boolean not = false;
                while (temp != null){
                        if(temp.price == budget) {
-                               System.out.println(temp.foodName + "      " + temp.category + "       " + temp.price + "       " + temp.calories + "        " + temp.fats + "     " + temp.crabs + "      " + temp.proteins);
+
+                           System.out.printf("%-15s %-12s %-8d %-10.1f %-8.1f %-8.1f %-8.1f\n",
+                                   temp.foodName, temp.category, temp.price, temp.calories, temp.fats, temp.crabs, temp.proteins);
+                           not = true;
+
                        }
                        temp= temp.next;
                }
+               if(!not)
+                   System.out.println(budget+" is not in list");
 
         }
         // clean list
